@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import "package:coffee_card/home.dart";
 
 void main() {
-  runApp(MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('My Coffee App'),
-            backgroundColor: Colors.brown[700],
-            centerTitle: true,
-          ),
-          body: const Home())));
+  runApp(const MaterialApp(home: Sandbox()));
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Sandbox extends StatelessWidget {
+  const Sandbox({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Text('hello world');
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sandbox'),
+        backgroundColor: Colors.grey,
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(width: 100, color: Colors.red, child: const Text('one')),
+          Container(width: 200, color: Colors.green, child: const Text('two')),
+          Container(
+              width: 300, color: Colors.yellow, child: const Text('three')),
+        ],
+      ),
+    );
   }
 }
